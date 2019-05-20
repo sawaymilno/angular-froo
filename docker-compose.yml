@@ -1,0 +1,40 @@
+version: '3.5'
+
+services:
+
+  atomic-angular-demo:
+    tty: true
+    stdin_open: true
+    networks:
+      - dev
+    build: .
+    volumes:
+      - '.:/usr/src/app'
+      - type: volume
+        source: nodemodules
+        target: /usr/src/app/app/node_modules
+        volume:
+          nocopy: true
+      - type: volume
+        source: npm
+        target: /root/.npm
+        volume:
+          nocopy: true
+    labels:
+      - "bowtie.project=atomic-angular-demo"
+      - "traefik.enable=true"
+      - "traefik.port=4200"
+      - "traefik.frontend.rule=Host:atomic-angular-demo.bowtie.dev"
+      - "traefik.frontend.headers.SSLRedirect=true"
+      - "traefik.docker.network=bowtie-dev"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+volumes:
+  npm:
+  nodemodules:
+
+networks:
+  dev:
+    external:
+      name: bowtie-dev
