@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Todo } from '../../classes/todo'
-import { TODOS } from '../../mock-data'
+import { TodoService } from '../../services/todo.service'
 
 @Component({
   selector: 'app-todos',
@@ -8,17 +8,22 @@ import { TODOS } from '../../mock-data'
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
-  todos = TODOS
+  todos: Todo[]
 
   selectedTodo: Todo
+
   onSelect(todo:  Todo): void {
     this.selectedTodo = todo
   }
 
-  constructor() { }
+  // todoService creates an asynchronous call for the todo data
+  getTodos(): void {
+    this.todoService.getTodos().subscribe(todos => this.todos = todos)
+  }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
-
+    this.getTodos()
   }
 
 }
