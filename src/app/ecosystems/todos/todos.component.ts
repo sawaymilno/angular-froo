@@ -19,10 +19,6 @@ export class TodosComponent implements OnInit {
     this.getTodos()
   }
 
-  onSelect(todo:  Todo): void {
-    this.selectedTodo = todo
-  }
-
   getTodos(): void {
     this.todoService.getTodos().subscribe(todos => this.todos = todos)
   }

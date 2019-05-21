@@ -7,14 +7,13 @@
     <!-- [class.someClass] will set a class to the element only if the following value
     is truthy. In this case, it will be a class of .selected only if todo is the
     same as the selected todo -->
-  <li
-    *ngFor="let todo of todos"
-    (click)="onSelect(todo)"
-    [class.selected]="todo === selectedTodo">
-    <span class="badge">{{todo.id}}</span> {{todo.name}}
+  <li *ngFor="let todo of todos">
+    <a routerLink="/todos/{{todo.id}}">
+      <span class="badge">{{todo.id}}</span> {{todo.name}}
+    </a>
   </li>
 </ul>
 
 <!-- Call upon the todo detail component, and give it a data binding (Like a React Prop)
 of todo. which is the selectedTodo from the todo component -->
-<app-todo-detail [todo]="selectedTodo"></app-todo-detail>
+<!-- <app-todo-detail [todo]="selectedTodo"></app-todo-detail> -->
