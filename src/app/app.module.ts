@@ -6,13 +6,15 @@ import { AppComponent } from './app.component'
 import { TodosComponent } from './ecosystems/todos/todos.component'
 
 import { FormsModule } from '@angular/forms';
-import { TodoDetailComponent } from './organisms/todo-detail/todo-detail.component'
+import { TodoDetailComponent } from './organisms/todo-detail/todo-detail.component';
+import { MessagesComponent } from './organisms/messages/messages.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
-    TodoDetailComponent
+    TodoDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
