@@ -21,4 +21,9 @@ export class TodoService {
     return of(TODOS)
   }
 
+  getTodo(id: number): Observable<Todo> {
+    this.messageService.add(`TodoService: fetched todo id=${id}`)
+    return of(TODOS.find(todo => todo.id === id))
+  }
+
 }
