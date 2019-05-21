@@ -3,9 +3,12 @@
   <h1>
     {{ title }}
   </h1>
-
+  <nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/todos">Todos</a>
+  </nav>
   <!-- The 'selector' property in each component is what is used to render a particular
   component as if it were an html element. The todos component, in this case -->
-  <app-todos></app-todos>
+  <router-outlet></router-outlet>
   <app-messages></app-messages>
 

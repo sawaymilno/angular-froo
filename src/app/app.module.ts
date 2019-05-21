@@ -7,14 +7,16 @@ import { TodosComponent } from './ecosystems/todos/todos.component'
 
 import { FormsModule } from '@angular/forms';
 import { TodoDetailComponent } from './organisms/todo-detail/todo-detail.component';
-import { MessagesComponent } from './organisms/messages/messages.component'
+import { MessagesComponent } from './organisms/messages/messages.component';
+import { DashboardComponent } from './ecosystems/dashboard/dashboard.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
     TodoDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
