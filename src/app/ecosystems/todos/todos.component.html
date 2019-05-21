@@ -1,17 +1,12 @@
-<div *ngIf="selectedTodo">
-
-  <h2>Todo: {{selectedTodo.name | uppercase}}</h2>
-  <div><span>id: </span> {{selectedTodo.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedTodo.name" placeholder="name" />
-    </label>
-  </div>
-
-</div>
-
 <h2>My Todos</h2>
 <ul class="todos">
+    <!-- *ngFor (Angular For) is a way to create the same element for each object
+    needed. In this case, for each todo in todos -->
+    <!-- (click) is an ng event listener which then runs onSelect(), a function
+    that is being defined inside the todos component -->
+    <!-- [class.someClass] will set a class to the element only if the following value
+    is truthy. In this case, it will be a class of .selected only if todo is the
+    same as the selected todo -->
   <li
     *ngFor="let todo of todos"
     (click)="onSelect(todo)"
@@ -19,3 +14,7 @@
     <span class="badge">{{todo.id}}</span> {{todo.name}}
   </li>
 </ul>
+
+<!-- Call upon the todo detail component, and give it a data binding (Like a React Prop)
+of todo. which is the selectedTodo from the todo component -->
+<app-todo-detail [todo]="selectedTodo"></app-todo-detail>

@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { TodosComponent } from './ecosystems/todos/todos.component'
 
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { TodoDetailComponent } from './organisms/todo-detail/todo-detail.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodosComponent
+    TodosComponent,
+    TodoDetailComponent
   ],
   imports: [
     BrowserModule,
