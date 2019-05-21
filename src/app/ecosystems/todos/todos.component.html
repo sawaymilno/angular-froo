@@ -1,3 +1,21 @@
-<p>
-  todos works!
-</p>
+<div *ngIf="selectedTodo">
+
+  <h2>Todo: {{selectedTodo.name | uppercase}}</h2>
+  <div><span>id: </span> {{selectedTodo.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedTodo.name" placeholder="name" />
+    </label>
+  </div>
+
+</div>
+
+<h2>My Todos</h2>
+<ul class="todos">
+  <li
+    *ngFor="let todo of todos"
+    (click)="onSelect(todo)"
+    [class.selected]="todo === selectedTodo">
+    <span class="badge">{{todo.id}}</span> {{todo.name}}
+  </li>
+</ul>

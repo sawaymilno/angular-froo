@@ -1,9 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { TodosComponent } from './ecosystems/todos/todos.component';
+import { AppRoutingModule } from './app-routing.module'
+import { AppComponent } from './app.component'
+import { TodosComponent } from './ecosystems/todos/todos.component'
+
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { TodosComponent } from './ecosystems/todos/todos.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
