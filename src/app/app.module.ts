@@ -11,10 +11,12 @@ import { TodosComponent } from './ecosystems/todos/todos.component'
 import { FormsModule } from '@angular/forms'
 import { TodoDetailComponent } from './organisms/todo-detail/todo-detail.component'
 import { MessagesComponent } from './organisms/messages/messages.component'
-import { DashboardComponent } from './ecosystems/dashboard/dashboard.component';
-import { TodoSearchComponent } from './molecules/todo-search/todo-search.component';
-import { NavLinkComponent } from './atoms/nav-link/nav-link.component';
+import { DashboardComponent } from './ecosystems/dashboard/dashboard.component'
+import { TodoSearchComponent } from './molecules/todo-search/todo-search.component'
+import { NavLinkComponent } from './atoms/nav-link/nav-link.component'
 import { LogoComponent } from './atoms/logo/logo.component'
+import { NavbarComponent } from './organisms/navbar/navbar.component';
+import { NavLinkGroupComponent } from './molecules/nav-link-group/nav-link-group.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { LogoComponent } from './atoms/logo/logo.component'
     DashboardComponent,
     TodoSearchComponent,
     NavLinkComponent,
-    LogoComponent
+    LogoComponent,
+    NavbarComponent,
+    NavLinkGroupComponent
   ],
   imports: [
     BrowserModule,

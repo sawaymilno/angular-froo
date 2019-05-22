@@ -1,0 +1,13 @@
+div {
+    display: inline;
+}
+
+.nav-link-group {
+    text-decoration: none;
+    display: inline;
+
+    & li {
+        display: inline;
+        text-decoration: none;
+    }
+}
