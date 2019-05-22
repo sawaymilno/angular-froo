@@ -74,6 +74,17 @@ export class TodoService {
       )
   }
 
+  searchTodos(term: string): Observable<Todo[]> {
+    if(!term.trim()) {
+      //Return empty array if searchterm is blank
+      return of([])
+    }
+    return this.http.get<Todo[]>(`${this.todosUrl}/?name=${term}`)
+      .pipe(
+        tap(_ => this.log(`found todos matching "${term}"`)),
+        catchError(this.handleError<Todo[]>('searchTodos', []))
+      )
+  }
   //this private log function exists only because we will call the add
   //method from MesageService constantly.
   private log(message: string) {
