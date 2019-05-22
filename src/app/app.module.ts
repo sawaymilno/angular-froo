@@ -11,7 +11,8 @@ import { TodosComponent } from './ecosystems/todos/todos.component'
 import { FormsModule } from '@angular/forms'
 import { TodoDetailComponent } from './organisms/todo-detail/todo-detail.component'
 import { MessagesComponent } from './organisms/messages/messages.component'
-import { DashboardComponent } from './ecosystems/dashboard/dashboard.component'
+import { DashboardComponent } from './ecosystems/dashboard/dashboard.component';
+import { TodoSearchComponent } from './molecules/todo-search/todo-search.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DashboardComponent } from './ecosystems/dashboard/dashboard.component'
     TodosComponent,
     TodoDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    TodoSearchComponent
   ],
   imports: [
     BrowserModule,

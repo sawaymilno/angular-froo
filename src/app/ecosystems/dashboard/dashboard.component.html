@@ -1,7 +1,7 @@
 <h2>Important Todos</h2>
 <div class="grid grid-path">
-  <a 
-  *ngFor="let todo of todos" 
+  <a
+  *ngFor="let todo of todos"
   class="col-1-4"
   routerLink="/todos/{{todo.id}}">
     <div class="module todo">
@@ -9,3 +9,5 @@
     </div>
   </a>
 </div>
+
+<app-todo-search></app-todo-search>

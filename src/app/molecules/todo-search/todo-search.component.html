@@ -1,0 +1,16 @@
+<div id="search-component">
+  <h4>Search Todos</h4>
+
+  <input #searchBox id='search-box' (input)="search(searchBox.value)" />
+
+  <ul class="search-results">
+    <!-- ngFor run for each todo in todos$, not todos. the "$" states that its an observable
+    ngFor can't work with Observables, so we add an async pipe (Angular AsyncPipe), this
+    subscribes the Observable automatically, so you don't have to do it in the class-->
+    <li *ngFor="let todo fo todos$ | async">
+      <a routerLink="/detail/{{todo.id}}">
+        {{todo.name}}
+      </a>
+    </li>
+  </ul>
+</div>
