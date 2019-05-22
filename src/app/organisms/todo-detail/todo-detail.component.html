@@ -1,7 +1,7 @@
-<div *ngIf="todo">
+<div *ngIf="todo" class="todo-detail">
 
-    <h2>Todo: {{todo.name}}</h2>
-    <h2>Task: {{todo.task}}</h2>
+    <h2>Todo: <span>{{todo.name}}</span></h2>
+    <h2>Task: <span>{{todo.task}}</span></h2>
     <div><span>id: </span> {{todo.id}}</div>
     <div>
       <label>name:

@@ -21,7 +21,7 @@
 </ul>
 <div>
   <label>New Todo:
-    <input #todoName />
+    <input #todoName (keyup.enter)="add(todoName.value); todoName.value=''"/>
   </label>
 
   <button (click)="add(todoName.value); todoName.value=''">
