@@ -16,7 +16,8 @@ import { TodoSearchComponent } from './molecules/todo-search/todo-search.compone
 import { NavLinkComponent } from './atoms/nav-link/nav-link.component'
 import { LogoComponent } from './atoms/logo/logo.component'
 import { NavbarComponent } from './organisms/navbar/navbar.component';
-import { NavLinkGroupComponent } from './molecules/nav-link-group/nav-link-group.component'
+import { NavLinkGroupComponent } from './molecules/nav-link-group/nav-link-group.component';
+import { ImportantTodoCardComponent } from './atoms/important-todo-card/important-todo-card.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NavLinkGroupComponent } from './molecules/nav-link-group/nav-link-group
     NavLinkComponent,
     LogoComponent,
     NavbarComponent,
-    NavLinkGroupComponent
+    NavLinkGroupComponent,
+    ImportantTodoCardComponent
   ],
   imports: [
     BrowserModule,

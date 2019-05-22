@@ -1,13 +1,12 @@
 <div class="grid grid-path">
   <h2>Important Todos</h2>
-  <a
-  *ngFor="let todo of todos"
-  class="col-1-4"
-  routerLink="/todos/{{todo.id}}">
-    <div class="module todo">
-      <h4>{{todo.name}}</h4>
-    </div>
-  </a>
+
+  <app-important-todo-card
+    *ngFor="let todo of todos"
+    name="{{todo.name}}"
+    id="{{todo.id}}"
+    >
+  </app-important-todo-card>
 </div>
 
 <app-todo-search></app-todo-search>
