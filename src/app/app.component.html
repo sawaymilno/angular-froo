@@ -1,16 +1,9 @@
-  <!-- In order to interpolate values into the component html template, you have to use
-  double curlies -->
-  <h1>
-    {{ title }}
-  </h1>
-  <!-- routerLink is included through the RouterModule in AppModule imports -->
-  <nav>
-    <app-nav-link path="/dashboard" name="Dashboard"></app-nav-link>
-    <app-nav-link path="/todos" name="Todos"></app-nav-link>
-  </nav>
+
   <!-- The 'selector' property in each component is what is used to render a particular
-  component as if it were an html element. The todos component, in this case -->
+  component as if it were an html element. The app-navbar component, in this case -->
+
+  <app-navbar></app-navbar>
+  
   <router-outlet></router-outlet>
   <app-messages></app-messages>
-  <app-navbar></app-navbar>
 

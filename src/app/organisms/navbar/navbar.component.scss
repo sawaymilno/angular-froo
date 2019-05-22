@@ -1,0 +1,13 @@
+.navbar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    & app-logo {
+        justify-self: flex-start;
+    }
+
+    & app-nav-link-group {
+        justify-self: flex-end;
+    }
+}
