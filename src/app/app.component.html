@@ -5,11 +5,12 @@
   </h1>
   <!-- routerLink is included through the RouterModule in AppModule imports -->
   <nav>
-    <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/todos">Todos</a>
+    <app-nav-link path="/dashboard" name="Dashboard"></app-nav-link>
+    <app-nav-link path="/todos" name="Todos"></app-nav-link>
   </nav>
   <!-- The 'selector' property in each component is what is used to render a particular
   component as if it were an html element. The todos component, in this case -->
   <router-outlet></router-outlet>
   <app-messages></app-messages>
+  
 
