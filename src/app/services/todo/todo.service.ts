@@ -5,7 +5,6 @@ import { Observable, of } from 'rxjs'
 import { catchError, map, tap } from 'rxjs/operators'
 
 import { Todo } from '../../classes/todo'
-import { TODOS } from '../../mock-data'
 import { MessageService } from '../message/message.service'
 
 // Services provide the abilty to fetch and deliver data from outside of
@@ -33,16 +32,41 @@ export class TodoService {
     const url = `${this.todosUrl}/${id}`
     return this.http.get<Todo>(url)
       .pipe(
-        tap(_ => this.log(`Fetched hero id=${id}`)),
+        tap(_ => this.log(`fetched hero id=${id}`)),
         catchError(this.handleError<Todo>(`getTodo id=${id}`))
       )
   }
 
+  addTodo(todo: Todo): Observable<Todo> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    return this.http.post(this.todosUrl, todo, httpOptions)
+      .pipe(
+        tap((newTodo: Todo) => this.log(`added todo id=${newTodo.id}`)),
+        catchError(this.handleError<Todo>('addTodo'))
+      )
+  }
+
+  updateTodo(todo: Todo): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+
+    return this.http.put(this.todosUrl, todo, httpOptions)
+      .pipe(
+        tap(_ => this.log(`updated todo id=${todo.id}`)),
+        catchError(this.handleError<any>('updateTodo'))
+      )
+  }
+
+  //this private log function exists only because we will call the add
+  //method from MesageService constantly.
   private log(message: string) {
     this.messageService.add(`TodoService: ${message}`)
   }
 
-  private todosUrl = 'api/todos' //URL to web API
+  private todosUrl = 'api/todos' //URL to web API (localhost:4200/api/todos)
 
   /**
  * Handle Http operation that failed.
@@ -64,3 +88,4 @@ private handleError<T> (operation = 'operation', result?: T) {
   };
 }
 }
+

@@ -13,6 +13,15 @@
     </a>
   </li>
 </ul>
+<div>
+  <label>New Todo:
+    <input #todoName />
+  </label>
+
+  <button (click)="add(todoName.value); todoName.value=''">
+    Add
+  </button>
+</div>
 
 <!-- Call upon the todo detail component, and give it a data binding (Like a React Prop)
 of todo. which is the selectedTodo from the todo component -->

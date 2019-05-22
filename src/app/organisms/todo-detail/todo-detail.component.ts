@@ -32,4 +32,8 @@ export class TodoDetailComponent implements OnInit {
   goBack(): void {
     this.location.back()
   }
+
+  save(): void {
+    this.todoService.updateTodo(this.todo).subscribe(() => this.goBack())
+  }
 }

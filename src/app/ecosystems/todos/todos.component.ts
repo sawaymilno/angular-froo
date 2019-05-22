@@ -22,4 +22,13 @@ export class TodosComponent implements OnInit {
   getTodos(): void {
     this.todoService.getTodos().subscribe(todos => this.todos = todos)
   }
+
+  add(name: string): void {
+    name = name.trim()
+    if(!name) { return }
+    this.todoService.addTodo({ name } as Todo)
+      .subscribe(todo => {
+        this.todos.push(todo)
+      })
+  }
 }
