@@ -31,4 +31,11 @@ export class TodosComponent implements OnInit {
         this.todos.push(todo)
       })
   }
+
+  delete(todo: Todo): void {
+    this.todos = this.todos.filter(t => t !== todo)
+    this.todoService.deleteTodo(todo).subscribe()
+    //You need to subscribe  even if you dont do anything with the observable
+    //the request doesn't go to the server unless it's subscribed
+  }
 }

@@ -60,6 +60,20 @@ export class TodoService {
       )
   }
 
+  deleteTodo(todo: Todo | number): Observable<Todo> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    const id = typeof todo === 'number' ? todo : todo.id
+    const url = `${this.todosUrl}/${id}`
+
+    return this.http.delete<Todo>(url, httpOptions)
+      .pipe(
+        tap(_ => this.log(`deleted todo id=${id}`)),
+        catchError(this.handleError<Todo>('deleteTodo'))
+      )
+  }
+
   //this private log function exists only because we will call the add
   //method from MesageService constantly.
   private log(message: string) {

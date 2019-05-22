@@ -11,6 +11,12 @@
     <a routerLink="/todos/{{todo.id}}">
       <span class="badge">{{todo.id}}</span> {{todo.name}}
     </a>
+    <button
+    class="delete"
+    title="delete todo"
+    (click)="delete(todo)">
+      x
+    </button>
   </li>
 </ul>
 <div>
