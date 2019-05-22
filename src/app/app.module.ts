@@ -13,7 +13,8 @@ import { TodoDetailComponent } from './organisms/todo-detail/todo-detail.compone
 import { MessagesComponent } from './organisms/messages/messages.component'
 import { DashboardComponent } from './ecosystems/dashboard/dashboard.component';
 import { TodoSearchComponent } from './molecules/todo-search/todo-search.component';
-import { NavLinkComponent } from './atoms/nav-link/nav-link.component'
+import { NavLinkComponent } from './atoms/nav-link/nav-link.component';
+import { LogoComponent } from './atoms/logo/logo.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NavLinkComponent } from './atoms/nav-link/nav-link.component'
     MessagesComponent,
     DashboardComponent,
     TodoSearchComponent,
-    NavLinkComponent
+    NavLinkComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,
