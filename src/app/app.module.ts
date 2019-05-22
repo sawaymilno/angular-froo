@@ -17,7 +17,8 @@ import { NavLinkComponent } from './atoms/nav-link/nav-link.component'
 import { LogoComponent } from './atoms/logo/logo.component'
 import { NavbarComponent } from './organisms/navbar/navbar.component';
 import { NavLinkGroupComponent } from './molecules/nav-link-group/nav-link-group.component';
-import { ImportantTodoCardComponent } from './atoms/important-todo-card/important-todo-card.component'
+import { ImportantTodoCardComponent } from './atoms/important-todo-card/important-todo-card.component';
+import { MessageComponent } from './atoms/message/message.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ImportantTodoCardComponent } from './atoms/important-todo-card/importan
     LogoComponent,
     NavbarComponent,
     NavLinkGroupComponent,
-    ImportantTodoCardComponent
+    ImportantTodoCardComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

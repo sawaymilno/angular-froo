@@ -32,7 +32,7 @@ export class TodoService {
     const url = `${this.todosUrl}/${id}`
     return this.http.get<Todo>(url)
       .pipe(
-        tap(_ => this.log(`fetched hero id=${id}`)),
+        tap(_ => this.log(`fetched todo id=${id}`)),
         catchError(this.handleError<Todo>(`getTodo id=${id}`))
       )
   }
@@ -48,15 +48,15 @@ export class TodoService {
       )
   }
 
-  updateTodo(todo: Todo): Observable<any> {
+  updateTodo(todo: Todo): Observable<Todo> {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
 
-    return this.http.put(this.todosUrl, todo, httpOptions)
+    return this.http.put<Todo>(this.todosUrl, todo, httpOptions)
       .pipe(
         tap(_ => this.log(`updated todo id=${todo.id}`)),
-        catchError(this.handleError<any>('updateTodo'))
+        catchError(this.handleError<Todo>('updateTodo'))
       )
   }
 
