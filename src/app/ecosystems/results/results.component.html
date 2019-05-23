@@ -37,16 +37,22 @@
     </select>
   </label>
 
+  <br />
+
   <label>Place:
     <input #resultPlace type="number" />
   </label>
+
+  <br />
 
   <label>Time:
     <input #resultTime type="number" />
   </label>
 
+  <br />
+
   <button (click)="add(racerId.value, resultPlace.value, resultTime.value); resultPlace.value=''; resultTime.value = ''">
-    Add
+    Add Result
   </button>
 </div>
 
