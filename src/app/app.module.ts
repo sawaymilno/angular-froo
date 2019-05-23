@@ -7,7 +7,7 @@ import { InMemoryDataService } from './services/InMemoryData/in-memory-data.serv
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { TodosComponent } from './ecosystems/todos/todos.component'
-
+import { ResultsComponent } from './ecosystems/results/results.component'
 import { FormsModule } from '@angular/forms'
 import { TodoDetailComponent } from './organisms/todo-detail/todo-detail.component'
 import { MessagesComponent } from './organisms/messages/messages.component'
@@ -24,6 +24,7 @@ import { MessageComponent } from './atoms/message/message.component'
   declarations: [
     AppComponent,
     TodosComponent,
+    ResultsComponent,
     TodoDetailComponent,
     MessagesComponent,
     DashboardComponent,
