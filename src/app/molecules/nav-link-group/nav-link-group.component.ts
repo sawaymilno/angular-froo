@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class NavLinkGroupComponent implements OnInit {
   links = [
     { path: '/dashboard', name: 'Dashboard' },
-    { path: '/todos', name: 'Todos' }
+    { path: '/racers', name: 'Racers' },
+    { path: '/results', name: 'Results' }
   ]
   constructor() {}
 
