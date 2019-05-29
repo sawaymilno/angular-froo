@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../../classes/todo'
 import { Racer } from '../../classes/racer'
-import { TodoService } from '../../services/todo/todo.service'
 import { RacerService } from '../../services/racer/racer.service'
 import { Result } from 'src/app/classes/result';
 import { ResultService } from 'src/app/services/result/result.service';
@@ -25,7 +23,7 @@ export class DashboardComponent implements OnInit {
 
   getRacers(): void {
     this.resultService.getResults().subscribe(results=> {
-      this.results = results.slice(0, 4)
+      this.results = results.slice(0, 3)
       this.results.map(result => {
         const id = result.racerId
         this.racerService.getRacer(id).subscribe(racer => this.racers.push(racer))

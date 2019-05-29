@@ -79,7 +79,7 @@ export class RacerService {
       //Return empty array if searchterm is blank
       return of([])
     }
-    return this.http.get<Racer[]>(`${this.racersUrl}/?name=${term}`)
+    return this.http.get<Racer[]>(`${this.racersUrl}/?firstName=${term}`)
       .pipe(
         tap(_ => this.log(`found racers matching "${term}"`)),
         catchError(this.handleError<Racer[]>('searchRacers', []))

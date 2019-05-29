@@ -2,11 +2,11 @@
 <div *ngIf="messageService.messages.length">
 
   <button
-    class="clear"
+    class="btn btn-success"
     (click)="messageService.clear()">
     Clear
   </button>
-
-  <div *ngFor="let message of messageService.messages"> {{message}} </div>
-
+<p *ngFor="let message of messageService.messages">
+  <ngb-alert [type]="'primary'" [dismissible]="false"> {{message}} </ngb-alert>
+</p>
 </div>

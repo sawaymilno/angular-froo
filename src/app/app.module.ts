@@ -7,14 +7,11 @@ import { InMemoryDataService } from './services/InMemoryData/in-memory-data.serv
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { TodosComponent } from './ecosystems/todos/todos.component'
 import { ResultsComponent } from './ecosystems/results/results.component'
 import { FormsModule } from '@angular/forms'
-import { TodoDetailComponent } from './organisms/todo-detail/todo-detail.component'
 import { RacerDetailComponent } from './organisms/racer-detail/racer-detail.component'
 import { MessagesComponent } from './organisms/messages/messages.component'
 import { DashboardComponent } from './ecosystems/dashboard/dashboard.component'
-import { TodoSearchComponent } from './molecules/todo-search/todo-search.component'
 import { NavLinkComponent } from './atoms/nav-link/nav-link.component'
 import { LogoComponent } from './atoms/logo/logo.component'
 import { NavbarComponent } from './organisms/navbar/navbar.component';
@@ -27,12 +24,9 @@ import { RacerSearchComponent } from './molecules/racer-search/racer-search.comp
 @NgModule({
   declarations: [
     AppComponent,
-    TodosComponent,
     ResultsComponent,
-    TodoDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    TodoSearchComponent,
     NavLinkComponent,
     LogoComponent,
     NavbarComponent,
