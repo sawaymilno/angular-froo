@@ -3,6 +3,8 @@ import { Todo } from '../../classes/todo'
 import { Racer } from '../../classes/racer'
 import { TodoService } from '../../services/todo/todo.service'
 import { RacerService } from '../../services/racer/racer.service'
+import { Result } from 'src/app/classes/result';
+import { ResultService } from 'src/app/services/result/result.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,14 +13,31 @@ import { RacerService } from '../../services/racer/racer.service'
 })
 export class DashboardComponent implements OnInit {
   racers: Racer[] = []
+  results: Result[] = []
 
-  constructor(private racerService: RacerService) { }
+  constructor(
+    private racerService: RacerService,
+    private resultService: ResultService) { }
 
   ngOnInit() {
     this.getRacers()
   }
 
   getRacers(): void {
-    this.racerService.getRacers().subscribe(racers=> this.racers = racers.slice(1, 5))
+    this.resultService.getResults().subscribe(results=> {
+      this.results = results.slice(0, 3)
+      this.results.map(result => {
+        const id = result.racerId
+        this.racerService.getRacer(id).subscribe(racer => this.racers.push(racer))
+      })
+    })
   }
+
+  // getRacers(): void {
+  //   console.log('results from racers', this.results)
+  //   this.results.map(result => {
+  //     const id = result.racerId
+  //     this.racerService.getRacer(id).subscribe(racer => this.racers.push(racer))
+  //   })
+  // }
 }
