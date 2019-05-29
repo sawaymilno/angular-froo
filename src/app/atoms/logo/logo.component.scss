@@ -1,4 +1,8 @@
 h2 {
     display: inline-block;
-    color: #b43838;
+
+    & a {
+        color: #b43838;
+        text-decoration: none;
+    }
 }

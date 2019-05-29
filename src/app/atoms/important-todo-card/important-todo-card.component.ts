@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./important-todo-card.component.scss']
 })
 export class ImportantTodoCardComponent implements OnInit {
-  @Input('name') name: string
+  @Input('lastName') lastName: string
+  @Input('firstName') firstName: string
   @Input('id') id: string
   constructor() { }
 

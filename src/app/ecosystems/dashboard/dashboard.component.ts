@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../../classes/todo'
+import { Racer } from '../../classes/racer'
 import { TodoService } from '../../services/todo/todo.service'
+import { RacerService } from '../../services/racer/racer.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -8,15 +10,15 @@ import { TodoService } from '../../services/todo/todo.service'
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  todos: Todo[] = []
+  racers: Racer[] = []
 
-  constructor(private todoService: TodoService) { }
+  constructor(private racerService: RacerService) { }
 
   ngOnInit() {
-    this.getTodos()
+    this.getRacers()
   }
 
-  getTodos(): void {
-    this.todoService.getTodos().subscribe(todos => this.todos = todos.slice(1, 5))
+  getRacers(): void {
+    this.racerService.getRacers().subscribe(racers=> this.racers = racers.slice(1, 5))
   }
 }

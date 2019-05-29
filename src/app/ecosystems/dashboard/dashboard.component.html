@@ -1,10 +1,11 @@
 <div class="grid grid-path">
-  <h2>Important Todos</h2>
+  <h2>Top Racers</h2>
 
   <app-important-todo-card
-    *ngFor="let todo of todos"
-    name="{{todo.name}}"
-    id="{{todo.id}}"
+    *ngFor="let racer of racers"
+    lastName="{{racer.lastName}}"
+    firstName="{{racer.firstName}}"
+    id="{{racer.id}}"
     >
   </app-important-todo-card>
 </div>
