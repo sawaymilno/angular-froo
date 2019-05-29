@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
 
   getRacers(): void {
     this.resultService.getResults().subscribe(results=> {
-      this.results = results.slice(0, 3)
+      this.results = results.slice(0, 4)
       this.results.map(result => {
         const id = result.racerId
         this.racerService.getRacer(id).subscribe(racer => this.racers.push(racer))

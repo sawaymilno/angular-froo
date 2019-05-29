@@ -21,7 +21,8 @@ import { NavbarComponent } from './organisms/navbar/navbar.component';
 import { NavLinkGroupComponent } from './molecules/nav-link-group/nav-link-group.component';
 import { ImportantTodoCardComponent } from './atoms/important-todo-card/important-todo-card.component';
 import { MessageComponent } from './atoms/message/message.component';
-import { RacersComponent } from './ecosystems/racers/racers.component'
+import { RacersComponent } from './ecosystems/racers/racers.component';
+import { RacerSearchComponent } from './molecules/racer-search/racer-search.component'
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { RacersComponent } from './ecosystems/racers/racers.component'
     ImportantTodoCardComponent,
     MessageComponent,
     RacersComponent,
-    RacerDetailComponent
+    RacerDetailComponent,
+    RacerSearchComponent
   ],
   imports: [
     BrowserModule,
