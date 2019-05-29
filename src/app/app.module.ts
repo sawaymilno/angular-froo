@@ -11,6 +11,7 @@ import { TodosComponent } from './ecosystems/todos/todos.component'
 import { ResultsComponent } from './ecosystems/results/results.component'
 import { FormsModule } from '@angular/forms'
 import { TodoDetailComponent } from './organisms/todo-detail/todo-detail.component'
+import { RacerDetailComponent } from './organisms/racer-detail/racer-detail.component'
 import { MessagesComponent } from './organisms/messages/messages.component'
 import { DashboardComponent } from './ecosystems/dashboard/dashboard.component'
 import { TodoSearchComponent } from './molecules/todo-search/todo-search.component'
@@ -19,7 +20,8 @@ import { LogoComponent } from './atoms/logo/logo.component'
 import { NavbarComponent } from './organisms/navbar/navbar.component';
 import { NavLinkGroupComponent } from './molecules/nav-link-group/nav-link-group.component';
 import { ImportantTodoCardComponent } from './atoms/important-todo-card/important-todo-card.component';
-import { MessageComponent } from './atoms/message/message.component'
+import { MessageComponent } from './atoms/message/message.component';
+import { RacersComponent } from './ecosystems/racers/racers.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { MessageComponent } from './atoms/message/message.component'
     NavbarComponent,
     NavLinkGroupComponent,
     ImportantTodoCardComponent,
-    MessageComponent
+    MessageComponent,
+    RacersComponent,
+    RacerDetailComponent
   ],
   imports: [
     BrowserModule,

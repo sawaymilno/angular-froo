@@ -21,15 +21,19 @@ export class InMemoryDataService implements InMemoryDbService {
     const racers = [
       {id: 1, firstName: 'Charlie', lastName: 'McClung'},
       {id: 2, firstName: 'Chad', lastName: 'Person'},
-      {id: 3, firstName: 'Somebody', lastName: 'Else'},
-      {id: 4, firstName: 'John', lastName: 'Doe'},
-      {id: 5, firstName: 'Example', lastName: 'Person'},
-      {id: 6, firstName: 'New', lastName: 'Racer'},
+      {id: 3, firstName: 'Joe', lastName: 'Pena'},
+      {id: 4, firstName: 'Hulk', lastName: 'Hogan'},
+      {id: 5, firstName: 'Neil', lastName: 'Armstrong'},
+      {id: 6, firstName: 'Buzz', lastName: 'Aldrin'},
     ]
 
     const results = [
-      {id: 1, racerId: 2, place: 1, time: 12345 },
-      {id: 2, racerId: 1, place: 2, time: 23456 }
+      {id: 1, racerId: 4, place: 1, time: 21.345 },
+      {id: 2, racerId: 6, place: 2, time: 23.455 },
+      {id: 3, racerId: 5, place: 3, time: 23.561 },
+      {id: 4, racerId: 1, place: 5, time: 24.561 },
+      {id: 5, racerId: 2, place: 4, time: 24.562 },
+      {id: 6, racerId: 3, place: 6, time: 24.568 },
     ]
 
     return {

@@ -1,0 +1,7 @@
+<h2>Racers</h2>
+
+<ul>
+  <li *ngFor="let racer of racers">
+    <a href="/racers/{{racer.id}}"><span>{{racer.lastName}}, {{racer.firstName}}</span></a>
+  </li>
+</ul>

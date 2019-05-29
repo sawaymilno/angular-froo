@@ -5,8 +5,8 @@
     <tr>
       <th>Place</th>
       <th>Time</th>
-      <th>First</th>
-      <th>Last</th>
+      <th>Last Name</th>
+      <th>First Name</th>
       <th></th>
     </tr>
   </thead>
@@ -14,8 +14,8 @@
     <tr *ngFor="let result of results">
       <td>{{result.place}}</td>
       <td>{{result.time}}</td>
-      <td>{{findRacer(result.racerId) && findRacer(result.racerId).firstName}}</td>
       <td>{{findRacer(result.racerId) && findRacer(result.racerId).lastName}}</td>
+      <td>{{findRacer(result.racerId) && findRacer(result.racerId).firstName}}</td>
       <td>
         <button
         class="delete"
@@ -55,14 +55,6 @@
     Add Result
   </button>
 </div>
-
-<h2>Racers</h2>
-
-<ul>
-  <li *ngFor="let racer of racers">
-    <p>Racer: {{racer.firstName}} {{racer.lastName}}</p>
-  </li>
-</ul>
 
 <!-- Call upon the todo detail component, and give it a data binding (Like a React Prop)
 of todo. which is the selectedTodo from the todo component -->
