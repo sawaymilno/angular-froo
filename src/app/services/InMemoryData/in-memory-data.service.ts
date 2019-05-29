@@ -29,7 +29,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const results = [
       {id: 1, racerId: 2, place: 1, time: 12345 },
-      {id: 2, racerId: 1, place: 2, time: 12345 }
+      {id: 2, racerId: 1, place: 2, time: 23456 }
     ]
 
     return {
