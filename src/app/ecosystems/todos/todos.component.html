@@ -29,6 +29,14 @@
   </button>
 </div>
 
+<h2>Racers</h2>
+
+<ul>
+  <li *ngFor="let racer of racers">
+    <p>Racer: {{racer.firstName}} {{racer.lastName}}</p>
+  </li>
+</ul>
+
 <!-- Call upon the todo detail component, and give it a data binding (Like a React Prop)
 of todo. which is the selectedTodo from the todo component -->
 <!-- <app-todo-detail [todo]="selectedTodo"></app-todo-detail> -->

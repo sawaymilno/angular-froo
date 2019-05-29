@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 
 import { Todo } from '../../classes/todo'
+import { Racer } from '../../classes/racer'
 import { TodoService } from '../../services/todo/todo.service'
+import { RacerService } from '../../services/racer/racer.service'
 
 @Component({
   selector: 'app-todos',
@@ -10,17 +12,26 @@ import { TodoService } from '../../services/todo/todo.service'
 })
 export class TodosComponent implements OnInit {
   todos: Todo[]
+  racers: Racer[]
 
   selectedTodo: Todo
   // todoService creates an asynchronous call for the todo data
-  constructor(private todoService: TodoService) { }
+  constructor(
+    private todoService: TodoService,
+    private racerService: RacerService
+  ) { }
 
   ngOnInit() {
     this.getTodos()
+    this.getRacers()
   }
 
   getTodos(): void {
     this.todoService.getTodos().subscribe(todos => this.todos = todos)
+  }
+
+  getRacers(): void {
+    this.racerService.getRacers().subscribe(racers => this.racers = racers)
   }
 
   add(name: string): void {

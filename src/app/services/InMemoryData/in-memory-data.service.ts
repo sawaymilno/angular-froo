@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const todos = [
@@ -15,8 +16,27 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 15, name: 'School Day', task: 'Take kids to school'},
       {id: 16, name: 'Trash day', task: 'Take out trash to the curb'},
       {id: 17, name: 'Call Boss', task: 'Call the milkman'}
-  ]
-  return {todos}
+    ]
+
+    const racers = [
+      {id: 1, firstName: 'Charlie', lastName: 'McClung'},
+      {id: 2, firstName: 'Chad', lastName: 'Person'},
+      {id: 3, firstName: 'Somebody', lastName: 'Else'},
+      {id: 4, firstName: 'John', lastName: 'Doe'},
+      {id: 5, firstName: 'Example', lastName: 'Person'},
+      {id: 6, firstName: 'New', lastName: 'Racer'},
+    ]
+
+    const results = [
+      {id: 1, racerId: 2, place: 1, time: 12345 },
+      {id: 2, racerId: 1, place: 2, time: 23456 }
+    ]
+
+    return {
+      todos,
+      racers,
+      results
+    }
   }
 
   // Overrides the genId method to ensure that a hero always has an id.
@@ -24,7 +44,7 @@ export class InMemoryDataService implements InMemoryDbService {
   // the method below returns the initial number (11). (Wash Dishes)
   // if the heroes array is not empty, the method below returns the highest
   // hero id + 1.
-  genId(todos: Todo[]): number {
-    return todos.length > 0 ? Math.max(...todos.map(todo => todo.id)) + 1 : 11
-  }
+  // genId(list: any[]): number {
+  //   return list.length > 0 ? Math.max(...list.map(item => item.id)) + 1 : 11
+  // }
 }
