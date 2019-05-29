@@ -1,13 +1,15 @@
-<div class="grid grid-path">
-  <h2>Top Racers</h2>
-
-  <app-important-todo-card
-    *ngFor="let racer of racers"
-    lastName="{{racer.lastName}}"
-    firstName="{{racer.firstName}}"
-    id="{{racer.id}}"
-    >
-  </app-important-todo-card>
+<div class="dashboard container">
+  <div class="row">
+  <h2 class="col-12 jusitfy-self-center">Top Racers</h2>
+    <app-important-todo-card
+      class="col-4"
+      *ngFor="let racer of racers"
+      lastName="{{racer.lastName}}"
+      firstName="{{racer.firstName}}"
+      id="{{racer.id}}"
+      >
+    </app-important-todo-card>
+  </div>
 </div>
 
 <app-racer-search></app-racer-search>
