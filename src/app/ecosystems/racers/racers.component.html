@@ -34,14 +34,14 @@
     </tr>
   </tbody>
 </table>
-<!-- 
+<!--
 <app-table
   [categories]="['id','Last Name', 'First Name']"
   [dataToShow]="[{id: 1234, last: 54664, first: 23455}, {id: 1234, last: 54664, first: 23433}]">
 </app-table> -->
 
 <div class="input-group w-50 mx-auto">
-  <div class="input-group-preapend">
+  <div class="input-group-prepend">
     <span class="input-group-text">Add racer</span>
   </div>
   <input class="form-control" #racerFirstName placeholder="First Name" (keyup.enter)="add(racerFirstName.value, racerLastName.value); racerFirstName.value=''; racerLastName.value=''"/>

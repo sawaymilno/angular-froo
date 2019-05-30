@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
-import { ResultsComponent } from './ecosystems/results/results.component'
-import { DashboardComponent } from './ecosystems/dashboard/dashboard.component'
-import { RacersComponent } from './ecosystems/racers/racers.component'
-import { RacerDetailComponent } from './organisms/racer-detail/racer-detail.component'
+import {
+  DashboardComponent,
+  RacerDetailComponent,
+  RacersComponent,
+  ResultsComponent
+} from './ecosystems'
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
