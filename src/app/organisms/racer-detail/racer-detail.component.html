@@ -1,19 +1,29 @@
-<div *ngIf="racer" class="todo-detail">
+<div *ngIf="racer">
+  <div class="card w-25 mt-5 mx-auto">
+    <div class="row no-gutters">
+      <div class="col-md-4 bg-secondary">
+        <h5 class="text-light text-center mt-5">Image</h5>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4 class="card-title">{{racer.lastName}}, {{racer.firstName}}</h4>
+          <p class="card-text"><small class="text-muted">ID: {{racer.id}}</small></p>
+          <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur alias temporibus pariatur natus odit dolore reiciendis non aut, similique commodi voluptatum deleniti.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <h2>Last Name: <span>{{racer.lastName}}</span></h2>
-    <h2>First Name: <span>{{racer.firstName}}</span></h2>
-    <div><span>id: </span> {{racer.id}}</div>
-    <div>
-      <label>Edit First Name:
-        <input [(ngModel)]="racer.firstName" placeholder="First Name" />
-      </label>
-    </div>
-    <div>
-      <label>Edit Last Name:
-          <input [(ngModel)]="racer.lastName" placeholder="Last Name" />
-      </label>
-    </div>
+  <div class="form-group mt-2">
+    <label class="d-block text-center">Edit First Name</label>
+    <input class="form-control w-25 mx-auto" [(ngModel)]="racer.firstName" placeholder="First Name" />
+  </div>
+  <div class="form-group">
+    <label class="d-block text-center">Edit Last Name</label>
+    <input class="form-control w-25 mx-auto" [(ngModel)]="racer.lastName" placeholder="Last Name" />
+  </div>
+  <div class="w-25 mx-auto">
+  <button class="btn btn-primary mr-2" (click)="save()">Save</button>
+  <button class="btn btn-outline-success ml-2" (click)="goBack()">Go back</button>
+  </div>
 </div>
-
-<button (click)="goBack()">Go back</button>
-<button (click)="save()">Save</button>
