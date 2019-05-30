@@ -37,9 +37,11 @@
   <input class="form-control" placeholder="Place" #resultPlace type="number" />
   <input class="form-control" placeholder="Time" #resultTime type="number" />
   <div class="input-group-append">
-    <button class="btn btn-outline-primary" (click)="add(racerId.value, resultPlace.value, resultTime.value); resultPlace.value=''; resultTime.value = ''">
-      Add Result
-    </button>
+    <app-btn
+      btnType="btn-success"
+      btnText="Add Result"
+      (click)="add(racerId.value, resultPlace.value, resultTime.value); resultPlace.value=''; resultTime.value = ''">
+    </app-btn>
   </div>
 </div>
 
