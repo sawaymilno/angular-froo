@@ -1,11 +1,12 @@
-<h2 class="text-center text-success mt-5">Messages</h2>
+<app-heading class="text-center text-success m-4" heading="Messages"></app-heading>
 <div class="d-flex flex-column h-25" *ngIf="messageService.messages.length">
-
-  <button
-    class="btn btn-success align-self-center mb-3"
-    (click)="messageService.clear()">
-    Clear
-  </button>
+  <app-btn
+    class="align-self-center mb-3"
+    title="Clear messages"
+    (click)="messageService.clear()"
+    btnType="btn-success"
+    btnText="Clear">
+  </app-btn>
   <p *ngFor="let message of messageService.messages">
     <ngb-alert class="w-25 mx-auto" [type]="'primary'" [dismissible]="false"> {{message}} </ngb-alert>
   </p>
