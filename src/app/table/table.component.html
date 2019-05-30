@@ -1,0 +1,13 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let category of categories" scope="col">{{category}}</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let object of data">
+      <td *ngFor="let key of objectKeys(object)">{{object.key}}</td>
+    </tr>
+  </tbody>
+</table>

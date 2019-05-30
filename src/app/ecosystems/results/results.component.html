@@ -16,12 +16,12 @@
       <td>{{findRacer(result.racerId) && findRacer(result.racerId).lastName}}</td>
       <td>{{findRacer(result.racerId) && findRacer(result.racerId).firstName}}</td>
       <td>
-        <button
-        class="btn btn-danger"
-        title="delete result"
-        (click)="delete(result)">
-          <strong>Delete</strong>
-        </button>
+        <app-btn
+          title="delete result"
+          (click)="delete(result)"
+          btnType="btn-danger"
+          btnText="Delete">
+        </app-btn>
       </td>
     </tr>
   </tbody>
@@ -29,14 +29,14 @@
 <div class="input-group w-50 mx-auto">
   <div class="input-group-prepend">
     <span class="input-group-text">New Result</span>
-    <select class="bg-transparent border-primary text-primary" #racerId>
-      <option value="">Select a racer</option>
-      <option *ngFor="let racer of racers" value="{{ racer.id }}">{{ racer.firstName }} {{ racer.lastName }}</option>
+    <select ngbDropdown class="bg-transparent border-primary text-primary" #racerId>
+      <option ngbDropdownItem value="">Select a racer</option>
+      <option ngbDropdownItem *ngFor="let racer of racers" value="{{ racer.id }}">{{ racer.firstName }} {{ racer.lastName }}</option>
     </select>
   </div>
   <input class="form-control" placeholder="Place" #resultPlace type="number" />
   <input class="form-control" placeholder="Time" #resultTime type="number" />
-  <div class="form-group-apend">
+  <div class="input-group-append">
     <button class="btn btn-outline-primary" (click)="add(racerId.value, resultPlace.value, resultTime.value); resultPlace.value=''; resultTime.value = ''">
       Add Result
     </button>

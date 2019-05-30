@@ -17,22 +17,28 @@
   <!-- [class.someClass] will set a class to the element only if the following value
   is truthy. In this case, it will be a class of .selected only if racer is the
   same as the selected racer -->
-    <tbody>
-      <tr *ngFor="let racer of racers" routerLink="/racers/{{racer.id}}">
-        <td>{{racer.id}}</td>
-        <td>{{racer.firstName}}</td>
-        <td>{{racer.lastName}}</td>
-        <td>
-          <button
-          class="btn btn-danger"
+  <tbody>
+    <tr *ngFor="let racer of racers" routerLink="/racers/{{racer.id}}">
+      <td>{{racer.id}}</td>
+      <td>{{racer.firstName}}</td>
+      <td>{{racer.lastName}}</td>
+      <td>
+        <app-btn
           title="delete racer"
-          (click)="delete(racer)">
-            <strong>Delete</strong>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          (click)="delete(racer)"
+          btnType="btn-danger"
+          btnText="Delete">
+        </app-btn>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- 
+<app-table
+  [categories]="['id','Last Name', 'First Name']"
+  [dataToShow]="[{id: 1234, last: 54664, first: 23455}, {id: 1234, last: 54664, first: 23433}]">
+</app-table> -->
+
 <div class="input-group w-50 mx-auto">
   <div class="input-group-preapend">
     <span class="input-group-text">Add racer</span>

@@ -19,7 +19,9 @@ import { NavLinkGroupComponent } from './molecules/nav-link-group/nav-link-group
 import { TopRacerCardComponent } from './atoms/top-racer-card/top-racer-card.component';
 import { RacersComponent } from './ecosystems/racers/racers.component';
 import { RacerSearchComponent } from './molecules/racer-search/racer-search.component';
-import { HeadingComponent } from './atoms/heading/heading.component'
+import { HeadingComponent } from './atoms/heading/heading.component';
+import { BtnComponent } from './atoms/btn/btn.component';
+import { TableComponent } from './table/table.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { HeadingComponent } from './atoms/heading/heading.component'
     RacersComponent,
     RacerDetailComponent,
     RacerSearchComponent,
-    HeadingComponent
+    HeadingComponent,
+    BtnComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
