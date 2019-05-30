@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TableComponent implements OnInit {
   @Input('categories') categories: any[]
-  @Input('data') dataToShow: any
+  @Input('data') dataToShow: any[]
   objectKeys = Object.keys
   constructor() { }
 
