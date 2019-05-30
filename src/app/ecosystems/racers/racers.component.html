@@ -1,44 +1,14 @@
 <!-- <h2 class="text-center mt-5">Racers</h2>
 -->
 <app-heading class="text-center" heading="Racers"></app-heading>
-<table class="table table-striped table-bordered table-sm table-hover w-50 mx-auto">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">First Name</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <!-- *ngFor (Angular For) is a way to create the same element for each object
-  needed. In this case, for each racer in racers -->
-  <!-- (click) is an ng event listener which then runs onSelect(), a function
-  that is being defined inside the racers component -->
-  <!-- [class.someClass] will set a class to the element only if the following value
-  is truthy. In this case, it will be a class of .selected only if racer is the
-  same as the selected racer -->
-  <tbody>
-    <tr *ngFor="let racer of racers" routerLink="/racers/{{racer.id}}">
-      <td>{{racer.id}}</td>
-      <td>{{racer.firstName}}</td>
-      <td>{{racer.lastName}}</td>
-      <td>
-        <app-btn
-          title="delete racer"
-          (click)="delete(racer)"
-          btnType="btn-danger"
-          btnText="Delete">
-          <p>Hello</p>
-        </app-btn>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<!--
+
 <app-table
-  [categories]="['id','Last Name', 'First Name']"
-  [dataToShow]="[{id: 1234, last: 54664, first: 23455}, {id: 1234, last: 54664, first: 23433}]">
-</app-table> -->
+  [columns]="tableColumns"
+  [data]="racers"
+  [linkEach]="'/racers'"
+  (deleted)="delete($event)"
+  >
+</app-table>
 
 <div class="input-group w-50 mx-auto">
   <div class="input-group-prepend">

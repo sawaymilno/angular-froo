@@ -13,33 +13,55 @@ import { RacerService } from '../../services/racer/racer.service'
 export class ResultsComponent implements OnInit {
   results: Result[]
   racers: Racer[]
+  tableData: Object[]
 
   selectedResult: Result
   // resultService creates an asynchronous call for the result data
+
+  tableColumns: Object[] = [
+    { label: 'Place', field: 'place' },
+    { label: 'Time', field: 'time' },
+    { label: 'Last Name', field: 'lastName' },
+    { label: 'First Name', field: 'firstName' }
+  ]
   constructor(
     private resultService: ResultService,
     private racerService: RacerService
   ) { }
 
   ngOnInit() {
-    this.getResults()
     this.getRacers()
+    // this.getResults()
   }
 
   findRacer(id: number): Racer {
     return this.racers && this.racers.find(racer => racer.id == id)
   }
 
+  getTableData(): void {
+    this.tableData = this.results.map(result => {
+      const racer = this.findRacer(result.racerId)
+
+      return Object.assign({}, result, {
+        firstName: racer && racer.firstName,
+        lastName: racer && racer.lastName
+      })
+    })
+  }
+
   getResults(): void {
     this.resultService.getResults().subscribe(results => {
       this.results = results
 
-      console.log('loaded results', results)
+      this.getTableData()
     })
   }
 
   getRacers(): void {
-    this.racerService.getRacers().subscribe(racers => this.racers = racers)
+    this.racerService.getRacers().subscribe(racers => {
+      this.racers = racers
+      this.getResults()
+    })
   }
 
   add(racerId: number, place: number, time: number): void {
@@ -50,7 +72,8 @@ export class ResultsComponent implements OnInit {
   }
 
   delete(result: Result): void {
-    this.results = this.results.filter(t => t !== result)
+    this.results = this.results.filter(t => t.id !== result.id)
+    this.getTableData()
     this.resultService.deleteResult(result).subscribe()
     //You need to subscribe  even if you dont do anything with the observable
     //the request doesn't go to the server unless it's subscribed

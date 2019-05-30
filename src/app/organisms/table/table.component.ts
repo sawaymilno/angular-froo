@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -6,11 +6,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-  @Input('categories') categories: any[]
-  @Input('data') dataToShow: any[]
-  objectKeys = Object.keys
+  @Input('columns') columns: any[];
+  @Input('data') data: any[];
+  @Input('linkEach') linkEach: string = '';
+  @Input('linkEachKey') linkEachKey: string = 'id';
+  @Output() deleted = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  delete(obj: any): void {
+    this.deleted.emit(obj)
   }
 }

@@ -1,31 +1,12 @@
 <app-heading class="text-center" heading="Results"></app-heading>
-<table class="table table-striped table-bordered table-sm table-hover w-50 mx-auto">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">Place</th>
-      <th scope="col">Time</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">First Name</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let result of results" routerLink="/racers/{{result.racerId}}">
-      <td>{{result.place}}</td>
-      <td>{{result.time}}</td>
-      <td>{{findRacer(result.racerId) && findRacer(result.racerId).lastName}}</td>
-      <td>{{findRacer(result.racerId) && findRacer(result.racerId).firstName}}</td>
-      <td>
-        <app-btn
-          title="delete result"
-          (click)="delete(result)"
-          btnType="btn-danger"
-          btnText="Delete">
-        </app-btn>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<app-table
+  [columns]="tableColumns"
+  [data]="tableData"
+  [linkEach]="'/racers'"
+  [linkEachKey]="'racerId'"
+  (deleted)="delete($event)"
+>
+</app-table>
 <div class="input-group w-50 mx-auto">
   <div class="input-group-prepend">
     <span class="input-group-text">New Result</span>
