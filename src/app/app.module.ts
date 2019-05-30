@@ -3,22 +3,38 @@ import { NgModule } from '@angular/core'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'
 import { HttpClientModule } from '@angular/common/http'
-import { InMemoryDataService } from './services/InMemoryData/in-memory-data.service'
+import { FormsModule } from '@angular/forms'
 
+import { InMemoryDataService } from './services/InMemoryData/in-memory-data.service'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { ResultsComponent } from './ecosystems/results/results.component'
-import { FormsModule } from '@angular/forms'
-import { RacerDetailComponent } from './organisms/racer-detail/racer-detail.component'
-import { MessagesComponent } from './organisms/messages/messages.component'
-import { DashboardComponent } from './ecosystems/dashboard/dashboard.component'
-import { NavLinkComponent } from './atoms/nav-link/nav-link.component'
-import { LogoComponent } from './atoms/logo/logo.component'
-import { NavbarComponent } from './organisms/navbar/navbar.component';
-import { NavLinkGroupComponent } from './molecules/nav-link-group/nav-link-group.component';
-import { ImportantTodoCardComponent } from './atoms/important-todo-card/important-todo-card.component';
-import { RacersComponent } from './ecosystems/racers/racers.component';
-import { RacerSearchComponent } from './molecules/racer-search/racer-search.component'
+
+import {
+  BtnComponent,
+  HeadingComponent,
+  LogoComponent,
+  NavLinkComponent,
+  TopRacerCardComponent
+} from './atoms'
+
+import {
+  DashboardComponent,
+  RacerDetailComponent,
+  RacersComponent,
+  ResultsComponent
+} from './ecosystems'
+
+import {
+  NavLinkGroupComponent,
+  RacerSearchComponent
+} from './molecules'
+
+import {
+  MessagesComponent,
+  NavbarComponent,
+  TableComponent
+} from './organisms'
+
 
 @NgModule({
   declarations: [
@@ -30,10 +46,13 @@ import { RacerSearchComponent } from './molecules/racer-search/racer-search.comp
     LogoComponent,
     NavbarComponent,
     NavLinkGroupComponent,
-    ImportantTodoCardComponent,
+    TopRacerCardComponent,
     RacersComponent,
     RacerDetailComponent,
-    RacerSearchComponent
+    RacerSearchComponent,
+    HeadingComponent,
+    BtnComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

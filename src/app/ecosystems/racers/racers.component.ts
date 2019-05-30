@@ -10,6 +10,12 @@ import { RacerService } from 'src/app/services/racer/racer.service';
 export class RacersComponent implements OnInit {
   racers: Racer[]
 
+  tableColumns: Object[] = [
+    { label: 'ID', field: 'id' },
+    { label: 'Last Name', field: 'lastName' },
+    { label: 'First Name', field: 'firstName' }
+  ]
+
   constructor(private racerService: RacerService) { }
 
   ngOnInit() {

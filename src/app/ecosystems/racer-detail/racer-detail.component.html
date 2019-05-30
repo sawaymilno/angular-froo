@@ -23,7 +23,18 @@
     <input class="form-control w-25 mx-auto" [(ngModel)]="racer.lastName" placeholder="Last Name" />
   </div>
   <div class="w-25 mx-auto">
-  <button class="btn btn-primary mr-2" (click)="save()">Save</button>
-  <button class="btn btn-outline-success ml-2" (click)="goBack()">Go back</button>
+  <app-btn
+    class="mr-2"
+    title="Save racer details"
+    (click)="save()"
+    btnType="btn-primary"
+    btnText="Save">
+  </app-btn>
+  <app-btn
+    title="Go back"
+    (click)="goBack()"
+    btnType="btn-outline-success"
+    btnText="Go back">
+  </app-btn>
   </div>
 </div>
