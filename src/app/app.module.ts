@@ -18,13 +18,6 @@ import {
 } from './atoms'
 
 import {
-  DashboardComponent,
-  RacerDetailComponent,
-  RacersComponent,
-  ResultsComponent
-} from './ecosystems'
-
-import {
   NavLinkGroupComponent,
   RacerSearchComponent
 } from './molecules'
@@ -35,6 +28,12 @@ import {
   TableComponent
 } from './organisms'
 
+import {
+  DashboardComponent,
+  RacerDetailComponent,
+  RacersComponent,
+  ResultsComponent
+} from './ecosystems'
 
 @NgModule({
   declarations: [
