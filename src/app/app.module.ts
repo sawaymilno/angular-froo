@@ -16,7 +16,7 @@ import { NavLinkComponent } from './atoms/nav-link/nav-link.component'
 import { LogoComponent } from './atoms/logo/logo.component'
 import { NavbarComponent } from './organisms/navbar/navbar.component';
 import { NavLinkGroupComponent } from './molecules/nav-link-group/nav-link-group.component';
-import { ImportantTodoCardComponent } from './atoms/important-todo-card/important-todo-card.component';
+import { TopRacerCardComponent } from './atoms/top-racer-card/top-racer-card.component';
 import { RacersComponent } from './ecosystems/racers/racers.component';
 import { RacerSearchComponent } from './molecules/racer-search/racer-search.component';
 import { HeadingComponent } from './atoms/heading/heading.component'
@@ -31,7 +31,7 @@ import { HeadingComponent } from './atoms/heading/heading.component'
     LogoComponent,
     NavbarComponent,
     NavLinkGroupComponent,
-    ImportantTodoCardComponent,
+    TopRacerCardComponent,
     RacersComponent,
     RacerDetailComponent,
     RacerSearchComponent,

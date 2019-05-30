@@ -1,14 +1,14 @@
 <app-heading class="text-center" heading="Top Racers"></app-heading>
 <div class="p-5 h-50 d-flex flex-column align-items-center">
   <!-- <div class="row"> -->
-    <app-important-todo-card
+    <app-top-racer-card
       class="col-4"
       *ngFor="let racer of racers"
       lastName="{{racer.lastName}}"
       firstName="{{racer.firstName}}"
       id="{{racer.id}}"
       >
-    </app-important-todo-card>
+    </app-top-racer-card>
   <!-- </div> -->
 </div>
 
