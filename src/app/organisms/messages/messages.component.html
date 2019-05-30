@@ -1,12 +1,12 @@
-<h2>Messages</h2>
-<div *ngIf="messageService.messages.length">
+<h2 class="text-center text-success mt-5">Messages</h2>
+<div class="d-flex flex-column h-25" *ngIf="messageService.messages.length">
 
   <button
-    class="btn btn-success"
+    class="btn btn-success align-self-center mb-3"
     (click)="messageService.clear()">
     Clear
   </button>
-<p *ngFor="let message of messageService.messages">
-  <ngb-alert [type]="'primary'" [dismissible]="false"> {{message}} </ngb-alert>
-</p>
+  <p *ngFor="let message of messageService.messages">
+    <ngb-alert class="w-25 mx-auto" [type]="'primary'" [dismissible]="false"> {{message}} </ngb-alert>
+  </p>
 </div>

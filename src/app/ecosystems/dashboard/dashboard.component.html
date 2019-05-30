@@ -1,6 +1,6 @@
-<div class="dashboard container">
-  <div class="row">
-  <h2 class="col-12 jusitfy-self-center">Top Racers</h2>
+<div class="p-5 h-50 d-flex flex-column align-items-center">
+  <!-- <div class="row"> -->
+  <h2 class=" text-center">Top Racers</h2>
     <app-important-todo-card
       class="col-4"
       *ngFor="let racer of racers"
@@ -9,7 +9,7 @@
       id="{{racer.id}}"
       >
     </app-important-todo-card>
-  </div>
+  <!-- </div> -->
 </div>
 
 <app-racer-search></app-racer-search>

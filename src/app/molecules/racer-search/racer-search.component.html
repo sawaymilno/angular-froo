@@ -1,16 +1,17 @@
-<div id="search-component">
-    <label>Search Racers
+<div id="container">
+    <div class="input-group w-25 mx-auto">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Search Racers</span>
+      </div>
       <input class="form-control" #searchBox id='search-box' (input)="search(searchBox.value)" placeholder="Search by first name"/>
-    </label>
-    <ul class="search-result">
+    </div>
+    <div class="w-25 mx-auto d-flex flex-column bg-light">
       <!-- ngFor run for each todo in todos$, not todos. the "$" states that its an observable
       ngFor can't work with Observables, so we add an async pipe (Angular AsyncPipe), this
-      subscribes the Observable automatically, so you don't have to do it in the class-->
-      <li *ngFor="let racer of racers$ | async">
-        <a routerLink="/racers/{{racer.id}}">
+      subscribes the Observable automatically, so you don't have to do it in the class component-->
+        <a *ngFor="let racer of racers$ | async" routerLink="/racers/{{racer.id}}" class="text-decoration-none text-primary">
           {{racer.firstName}}
           {{racer.lastName}}
         </a>
-      </li>
-    </ul>
+    </div>
 </div>
