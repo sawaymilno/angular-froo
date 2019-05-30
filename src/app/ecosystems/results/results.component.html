@@ -1,7 +1,7 @@
-<h2>Results</h2>
+<h2 class="text-center mt-5">Results</h2>
 
-<table class="table table-striped table-dark table-bordered table-sm table-hover">
-  <thead class="thead-dark">
+<table class="table table-striped table-bordered table-sm table-hover w-50 mx-auto">
+  <thead class="thead-light">
     <tr>
       <th scope="col">Place</th>
       <th scope="col">Time</th>
@@ -27,33 +27,21 @@
     </tr>
   </tbody>
 </table>
-<div>
-  <h4>New Result:</h4>
-
-  <label>
-    Racer:
-    <select ngbDropdown display="dynamic" #racerId>
+<div class="input-group w-50 mx-auto">
+  <div class="input-group-prepend">
+    <span class="input-group-text">New Result</span>
+    <select class="bg-transparent border-primary text-primary" #racerId>
+      <option value="">Select a racer</option>
       <option *ngFor="let racer of racers" value="{{ racer.id }}">{{ racer.firstName }} {{ racer.lastName }}</option>
     </select>
-  </label>
-
-  <br />
-
-  <label>Place:
-    <input #resultPlace type="number" />
-  </label>
-
-  <br />
-
-  <label>Time:
-    <input #resultTime type="number" />
-  </label>
-
-  <br />
-
-  <button class="btn btn-primary" (click)="add(racerId.value, resultPlace.value, resultTime.value); resultPlace.value=''; resultTime.value = ''">
-    Add Result
-  </button>
+  </div>
+  <input class="form-control" placeholder="Place" #resultPlace type="number" />
+  <input class="form-control" placeholder="Time" #resultTime type="number" />
+  <div class="form-group-apend">
+    <button class="btn btn-outline-primary" (click)="add(racerId.value, resultPlace.value, resultTime.value); resultPlace.value=''; resultTime.value = ''">
+      Add Result
+    </button>
+  </div>
 </div>
 
 <!-- Call upon the todo detail component, and give it a data binding (Like a React Prop)
