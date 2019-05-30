@@ -18,7 +18,8 @@ import { NavbarComponent } from './organisms/navbar/navbar.component';
 import { NavLinkGroupComponent } from './molecules/nav-link-group/nav-link-group.component';
 import { ImportantTodoCardComponent } from './atoms/important-todo-card/important-todo-card.component';
 import { RacersComponent } from './ecosystems/racers/racers.component';
-import { RacerSearchComponent } from './molecules/racer-search/racer-search.component'
+import { RacerSearchComponent } from './molecules/racer-search/racer-search.component';
+import { HeadingComponent } from './atoms/heading/heading.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RacerSearchComponent } from './molecules/racer-search/racer-search.comp
     ImportantTodoCardComponent,
     RacersComponent,
     RacerDetailComponent,
-    RacerSearchComponent
+    RacerSearchComponent,
+    HeadingComponent
   ],
   imports: [
     BrowserModule,

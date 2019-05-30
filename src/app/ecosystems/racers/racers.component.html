@@ -1,20 +1,22 @@
-<h2 class="text-center mt-5">Racers</h2>
-    <!-- *ngFor (Angular For) is a way to create the same element for each object
-    needed. In this case, for each todo in todos -->
-    <!-- (click) is an ng event listener which then runs onSelect(), a function
-    that is being defined inside the todos component -->
-    <!-- [class.someClass] will set a class to the element only if the following value
-    is truthy. In this case, it will be a class of .selected only if todo is the
-    same as the selected todo -->
+<!-- <h2 class="text-center mt-5">Racers</h2>
+-->
+<app-heading class="text-center" heading="Racers"></app-heading>
 <table class="table table-striped table-bordered table-sm table-hover w-50 mx-auto">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">First Name</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">First Name</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <!-- *ngFor (Angular For) is a way to create the same element for each object
+  needed. In this case, for each racer in racers -->
+  <!-- (click) is an ng event listener which then runs onSelect(), a function
+  that is being defined inside the racers component -->
+  <!-- [class.someClass] will set a class to the element only if the following value
+  is truthy. In this case, it will be a class of .selected only if racer is the
+  same as the selected racer -->
     <tbody>
       <tr *ngFor="let racer of racers" routerLink="/racers/{{racer.id}}">
         <td>{{racer.id}}</td>
@@ -31,7 +33,7 @@
       </tr>
     </tbody>
   </table>
-<div class="input-group w-25 mx-auto">
+<div class="input-group w-50 mx-auto">
   <div class="input-group-preapend">
     <span class="input-group-text">Add racer</span>
   </div>
