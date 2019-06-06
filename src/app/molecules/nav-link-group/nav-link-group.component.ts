@@ -9,7 +9,8 @@ export class NavLinkGroupComponent implements OnInit {
   links = [
     { path: '/dashboard', name: 'Dashboard' },
     { path: '/racers', name: 'Racers' },
-    { path: '/results', name: 'Results' }
+    { path: '/results', name: 'Results' },
+    { path: '/froo12', name: 'Froo12' },
   ]
   constructor() {}
 

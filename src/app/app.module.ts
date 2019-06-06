@@ -1,39 +1,49 @@
 import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
+import { NgModule } from '@angular/core';
 
 import { InMemoryDataService } from './services/InMemoryData/in-memory-data.service'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 
+// atoms
 import {
   BtnComponent,
   HeadingComponent,
   LogoComponent,
   NavLinkComponent,
-  TopRacerCardComponent
+  TopRacerCardComponent,
+  InputComponent,
+  DropdownComponent,
+  RadioToggleComponent,
+  DatepickerComponent
 } from './atoms'
 
+// molecules
 import {
   NavLinkGroupComponent,
   RacerSearchComponent
 } from './molecules'
 
+// organisms
 import {
   MessagesComponent,
   NavbarComponent,
-  TableComponent
+  TableComponent,
+  QuestionComponent
 } from './organisms'
 
+// ecosystems
 import {
   DashboardComponent,
   RacerDetailComponent,
   RacersComponent,
-  ResultsComponent
-} from './ecosystems'
+  ResultsComponent,
+  Froo12Component
+} from './ecosystems';
 
 @NgModule({
   declarations: [
@@ -51,7 +61,13 @@ import {
     RacerSearchComponent,
     HeadingComponent,
     BtnComponent,
-    TableComponent
+    TableComponent,
+    Froo12Component,
+    InputComponent,
+    DropdownComponent,
+    RadioToggleComponent,
+    QuestionComponent,
+    DatepickerComponent,
   ],
   imports: [
     BrowserModule,

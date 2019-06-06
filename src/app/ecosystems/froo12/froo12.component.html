@@ -1,0 +1,47 @@
+<div class="row">
+  <nav class="sidebar">
+    Sidebar
+  </nav>
+  <div class="content">
+    <main class="data">
+      <app-heading  heading="Injured person identification"></app-heading>
+      <div class="initial-question">
+        <div class="question">
+          <app-question question="Was this person a:"></app-question>
+          <app-dropdown classType="initial-question--dropdown"></app-dropdown>
+        </div>
+      </div>
+      
+      <app-radio-toggle option1="Search for Injured Person" option2="Enter Manually"></app-radio-toggle>
+      <form class="form">
+
+        <div class="question">
+          <app-question question="Personal Information"></app-question>
+          <app-input label="First Name"></app-input>
+          <app-input label="Last Name"></app-input>
+          <app-radio-toggle label="Gender" option1="Male" option2="Female"></app-radio-toggle>
+          <app-datepicker label="Date of Birth"></app-datepicker>
+        </div>
+        
+        <div class="question">
+          <app-question question="Contact Information"></app-question>
+          <app-input label="Address"></app-input>
+          <app-input label="City"></app-input>
+          <div class="question-row">
+              <app-input label="State"></app-input>
+              <app-input label="Zip Code"></app-input>
+          </div>
+          <app-input label="Phone Number"></app-input>
+        </div>
+        
+      </form>
+        <div class="row-button">
+          <app-btn btnType="btn-light" btnText="Back"></app-btn>
+          <app-btn btnType="btn-dark" btnText="Next"></app-btn>
+        </div>
+    </main>
+  </div>
+</div>
+
+<!-- riderTypes="{[road, mtb, cyclocross, track]}"
+*ngFor="let type of riderTypes" -->

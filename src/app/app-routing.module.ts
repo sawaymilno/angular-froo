@@ -5,7 +5,8 @@ import {
   DashboardComponent,
   RacerDetailComponent,
   RacersComponent,
-  ResultsComponent
+  ResultsComponent,
+  Froo12Component
 } from './ecosystems'
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'racers', component: RacersComponent },
   { path: 'racers/:id', component: RacerDetailComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'results', component: ResultsComponent }
+  { path: 'results', component: ResultsComponent },
+  { path: 'froo12', component: Froo12Component }
 ];
 
 @NgModule({

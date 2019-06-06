@@ -1,0 +1,61 @@
+// .clearfix {
+//   .clearfix:after {
+//     content: " "; /* Older browser do not support empty content */
+//     visibility: hidden;
+//     display: block;
+//     height: 0;
+//     clear: both;
+//  }
+// }
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+.row-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 0rem;
+}
+
+.sidebar {
+  background-color: grey;
+  // height: 92vh;
+  width: 36vw;
+}
+
+.content {
+  // background-color: blue;
+  // height: 92vh;
+  width: 64vw;
+}
+
+.data {
+  // background-color: antiquewhite;
+  margin: 2rem 4rem;
+}
+
+.initial-question {
+  margin-top: 2rem;
+  border-bottom: 1px solid grey;
+  &--dropdown {
+    margin-top: -1rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.form {
+  padding: 1rem 0;
+}
+
+.question {
+  width: 73%;
+  margin: 2rem 0;
+}
+
+.question-row {
+  display: flex;
+  justify-content: space-between;
+}
+
