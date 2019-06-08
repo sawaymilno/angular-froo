@@ -1,45 +1,64 @@
-<div class="row">
-  <nav class="sidebar">
-    Sidebar
-  </nav>
-  <div class="content">
-    <main class="data">
-      <app-heading  heading="Injured person identification"></app-heading>
-      <div class="initial-question">
-        <div class="question">
-          <app-question question="Was this person a:"></app-question>
-          <app-dropdown classType="initial-question--dropdown"></app-dropdown>
+<div class="froo">
+  <div class="row sizing">
+    <nav class="sidebar">
+      <div class="tableOfContents">
+        <div class="top">
+          <svg class="logo" width="85" height="114" viewBox="0 0 85 114" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <rect width="85" height="114" fill="url(#pattern0)"/>
+            <defs>
+              <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0" transform="translate(-0.00131354) scale(0.0130211 0.00970874)"/>
+              </pattern>
+              <image id="image0" width="77" height="103" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAABnCAYAAABFPs/gAAAbF0lEQVR4Xt2dB5QT1ffH70yyWYRlBVYREewNBFEUe+8VFbti74q9gg1Xxd57L1ix997Fih3Ejo3iUgQFlt1NZv7n88wNL7OZZCa7lP/vnpOTbDLz5r3vu+/299aReUvOzJkzl0ilUl1d1+0qIl0dxzHvIrKo4zhtRITXItbL/tsTkfrsa46I8Mr97fv+bBGpE5GJvu9P8H1/oud5E+rr6yd26NDh73k1NKelDY8YMSLRv3//FZPJZC/HcXo7jtNTRJbJArOkiCRa+owy7wfgCSIy3vf9sSIyxvO8MQ0NDWOqqqomldmmuS0WaLNnz146lUoBTi8RASDee4hIZdxOzJkzR2bMmCGzZ8+WmTNnmvf6+vrcO5+TyaRUVlZK27ZtZZFFFjHv+rldu3ay6KKLmt/LoKmA6Pv+mCyYo6dOnTqqS5cus6K0FQra0KFD3SFDhqyeSCQ2EpGNHcfhnWVVlBoaGmTcuHHy+++/y4QJE+Svv/6SyZMny9SpUw1I06dPNyA1NTWVaqrk747jGDDbt29vAOzYsaPU1NTI4osvLksssYQstdRSsuKKK0rXriW7zbPSIvKV7/vv+74/sqGhYWS7du3g1GaUA23cuHFtunXr1s91XQVoA+ROsZ6PHTtWvvnmG/n+++/l119/NSBNmTJF0mmev/AQXNmlSxfp1q2bLLfcctKjRw/p06ePAbYEjQNAERmZTqffr6yshDN9J5PJnOA4zgARWS9smfm+Lx999JF8+OGH8tNPP8mff/4pdXV1Ale1hOCURCIhFRUV5p3lyIu/efFcOJIXE8Erk8nk3vm9XOLZcChgAmTfvn1lk002MX8XoSm+77/oeJ7X7MnIl/fff18+/vhjgZvgImRMVGLgLJcOHTrkls1iiy1mlg2dYtksvfTS0qlTp6hNNrsOwP744w8zgRMnTjRiABHACxHAi8+IgqgEkPRxpZVWkt69e8vGG28sPXui1/Lonxxor7/+urz55pvy3Xffmc5EWWKAAxgAAQjLL7+8rLbaauaBZQroqOOLfB1gIkJ++OEHM/mAzHfIV7i2FFVVVckKK6wgZ599tgFTRGbkQNt///3l22+/DW0DgACHG1dffXVZa621pFevXsLs/H8kVhMradSoUYZRUF5//x1u2l199dWy+eabFwcNhJdddlnDngC0/vrrGxlQLrFMAL5NG2zXfKLDn376qYwfP17++ecfIys9zzMTkkqljJnBsoGL+/XrJ67rltuNovexwkaOHClff/214czffvstt+Is0KYX5LS9995bzjrrrBZ17KGHHpJffvnFgABgjY2Nctxxx8maa66Zaxc5edNNN5mZjkqIg2OOOUaWWQb7OZzuuusus/w6d+4sSy65pHTv3t2slDiADxgwwHAgZIH2d0HQDj74YDnxxBNDe4QNhhZdY401QoX5+eefbzjHpiBoV155ZSzAtC0UzKWXXmo4txAx0GHDhhntaxMaGlvuiCOOMHKqFLUYtKefflpGjx4tkyZNEqx56Mwzz1Th2Oz5pUD7/PPP5eabb867DxBWXXVVY6CyLFmmmDY//vhjM6E9aNAgM2mF6I477jDyKow23HBDOeSQQ0phJiGgTYvMaeeee65R7Ta1BLTHHntMXnnllbz2dtxxR9ltt92aDeall16SJ554Iu/7XXbZRXbeeedm17LkTzvttKI2JLL5qquuKrlU6QsaN7A8FxxohbgBhYNowDWyCU/jzjvvNEIZQxf5iELYZ599moH24osvypNPPpn3PbKMFWITcpHnFaNdd93VKIMAaFMXGKc99dRT8sILLzTrMxoTzV1dXW0MY14sV2QQ5k4h7Ws3cs455zQDCFn64IMPGoNXCTfq+OOPLwe0KQsMtJ9//lkuu+wyY1pEJTQfZgfLBmM6SHgvLDubUBoonHvvvdd4OUrITK4NcrV9LyIApRfgtAUHGh1BubCc4gDHffilmERBs+OGG26Qr776Kg+0LbfcUvbdd19jd11++eV5v+23336yxRZbhM5ZCGiTFxinaU8xS1AIyC1CSFjqURxx/NcLLrggN2DswTPOOCPP/WOp19bWGjsNOv300/OsfsJGxezRhRa04DRjkBJemjZtmnnxGeMXs8MmAIGzVMYh/OFam4he4DMq3X///fLuu+/m/ma5X3LJJUZmFqL+/fsbPzywPOvmGafRWRxjm0499VQTy4Luuece+ffff41pgDYk4oFGC6PBgwcbTgxrDy4DZJsIGuAR0DbvcDCBCZt22mknQUvGAO2vFoFmgxB8KB7FrFlzo8dwxnXXXWf8SOiUU04xLpYSgvmiiy4K9TCKgVbIUA5FP/ADS/fCCy+cf6ARGcl6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"/>
+            </defs>
+          </svg>
+          <h2 class="title">First Report Of Occurance</h2>
+          <img class="tocLogo" src="../../../assets/logos/tableOfContents.png" alt="USA Cycling Logo">
+        </div>
+        <div class="bottom">
+          <app-btn class="returnButton" btnType="btn-light returnButton" btnText="Return To Account"></app-btn>
         </div>
       </div>
-      
-      <app-radio-toggle option1="Search for Injured Person" option2="Enter Manually"></app-radio-toggle>
-      <form class="form">
-
-        <div class="question">
-          <app-question question="Personal Information"></app-question>
-          <app-input label="First Name"></app-input>
-          <app-input label="Last Name"></app-input>
-          <app-radio-toggle label="Gender" option1="Male" option2="Female"></app-radio-toggle>
-          <app-datepicker label="Date of Birth"></app-datepicker>
-        </div>
-        
-        <div class="question">
-          <app-question question="Contact Information"></app-question>
-          <app-input label="Address"></app-input>
-          <app-input label="City"></app-input>
-          <div class="question-row">
-              <app-input label="State"></app-input>
-              <app-input label="Zip Code"></app-input>
+    </nav>
+    <div class="content">
+      <main class="data">
+        <app-heading  heading="Injured person identification"></app-heading>
+        <div class="initial-question">
+          <div class="question">
+            <app-question question="Was this person a:"></app-question>
+            <app-dropdown classType="initial-question--dropdown"></app-dropdown>
           </div>
-          <app-input label="Phone Number"></app-input>
         </div>
         
-      </form>
-        <div class="row-button">
-          <app-btn btnType="btn-light" btnText="Back"></app-btn>
-          <app-btn btnType="btn-dark" btnText="Next"></app-btn>
-        </div>
-    </main>
+        <app-radio-toggle option1="Search for Injured Person" option2="Enter Manually"></app-radio-toggle>
+        <form class="form">
+
+          <div class="question">
+            <app-question question="Personal Information"></app-question>
+            <app-input label="First Name"></app-input>
+            <app-input label="Last Name"></app-input>
+            <app-radio-toggle label="Gender" option1="Male" option2="Female"></app-radio-toggle>
+            <app-datepicker label="Date of Birth"></app-datepicker>
+          </div>
+          
+          <div class="question">
+            <app-question question="Contact Information"></app-question>
+            <app-input label="Address"></app-input>
+            <app-input label="City"></app-input>
+            <div class="question-row">
+                <app-input label="State"></app-input>
+                <app-input label="Zip Code"></app-input>
+            </div>
+            <app-input label="Phone Number"></app-input>
+          </div>
+          
+        </form>
+          <div class="row-button">
+            <app-btn btnType="btn-light" btnText="Back"></app-btn>
+            <app-btn btnType="btn-dark" btnText="Next"></app-btn>
+          </div>
+      </main>
+    </div>
   </div>
 </div>
 
